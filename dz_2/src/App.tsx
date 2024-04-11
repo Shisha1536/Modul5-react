@@ -6,11 +6,7 @@ function App() {
 
 	const [numder, setNumder] = useState<number>(0);	
 	const [date, setDate] =useState<string>('');
-	//function PlusClick() {
-	//	setNumder(numder + 1);
-	//}
 	
-
 	useEffect(() =>{
 		setDate(Date());
 	}, [])
