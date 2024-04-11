@@ -14,7 +14,7 @@ function App() {
 	return (
 		<React.Fragment>
 			<div>
-				<h3>{String(numder)}</h3>
+				<h3>{numder}</h3>
 				<button onClick={()=>setNumder(numder + 1)}>Плюс</button>
 				<button onClick={()=>setNumder(numder - 1)}>Минус</button>
 			</div>
