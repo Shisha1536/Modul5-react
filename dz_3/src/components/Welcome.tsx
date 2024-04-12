@@ -1,3 +1,6 @@
-export default function Welcome(props: string) {
-    <h1>{props}</h1>
+export default function Welcome(props: any) {
+    return (
+        <h1>{props.name}</h1>
+    )
+    
 }

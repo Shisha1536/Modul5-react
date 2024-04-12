@@ -1,13 +1,20 @@
-import React from 'react';
+
 import './App.css';
 import Welcome from "./components/Welcome";
 
+let arr = ['Алексей', "Платон", "Сергей", "Александр", "Игорь"];
+
 function App() {
-	let name: string | null = prompt();
 	return (
-		<React.Fragment>
-			<Welcome {...name} />
-		</React.Fragment>
+		<div>123
+			<Welcome  name={arr[0]}/>
+			<Welcome  name={arr[1]}/>
+			<Welcome  name={arr[2]}/>
+			<Welcome  name={arr[3]}/>
+			<Welcome  name={arr[4]}/>
+		</div>
+		
+		
 	);
 }
 
