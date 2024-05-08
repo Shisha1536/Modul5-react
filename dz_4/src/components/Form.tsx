@@ -5,7 +5,7 @@ export default function Form() {
 
     const [value, setValue] = useState('');
     return(
-        <form>
+        <form className={styles.form}>
             <div>
                 <label htmlFor="surname" className={styles.label}>Фамилия</label>
                 <input name="surname" type="text" />
@@ -14,12 +14,15 @@ export default function Form() {
                 <label htmlFor="middle-name" className={styles.label}>Отчество</label>
                 <input name="middle-name" type="text" />
             </div>
-            <label htmlFor="auto">Авто</label>
-            <select name="auto" value={value} onChange={(e) => setValue(e.target.value)}>
-                <option value="1">Mercedes-Benz</option>
-                <option value="2">BMW</option>
-                <option value="3">Volkswagen</option>
-            </select>
+            <div>
+                <label htmlFor="auto">Авто</label>
+                <select name="auto" value={value} onChange={(e) => setValue(e.target.value)}>
+                    <option value="1">Mercedes-Benz</option>
+                    <option value="2">BMW</option>
+                    <option value="3">Volkswagen</option>
+                </select>
+            </div>
+            <button type="button">Отмена</button>
         </form>
     )
 }
