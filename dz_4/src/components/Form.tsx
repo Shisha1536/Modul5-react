@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { SetStateAction } from "react";
+import { JSX } from "react/jsx-runtime";
 import styles from "./Form.module.css";
+import Start from "./StartButton";
 
-export default function Form() {
+export default function Form(funck: { (value: SetStateAction<JSX.Element>): void; (arg0: JSX.Element): void; }) {
 
-    const [value, setValue] = useState('');
+    function Click() {
+        funck(Start(funck))
+    }
+
     return(
         <form className={styles.form}>
             <div>
@@ -16,13 +21,13 @@ export default function Form() {
             </div>
             <div>
                 <label htmlFor="auto">Авто</label>
-                <select name="auto" value={value} onChange={(e) => setValue(e.target.value)}>
+                <select name="auto">
                     <option value="1">Mercedes-Benz</option>
                     <option value="2">BMW</option>
                     <option value="3">Volkswagen</option>
                 </select>
             </div>
-            <button type="button">Отмена</button>
+            <button type="button" onClick={Click}>Отмена</button>
         </form>
     )
 }
